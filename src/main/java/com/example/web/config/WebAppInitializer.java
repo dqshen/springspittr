@@ -7,6 +7,12 @@ import javax.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/** 
+ * AbstractAnnotationConfigDispatcherServletInitializer 的实现类会被spring-mvc环境注入到 SpringServletContainerInitializer 中，
+ * SpringServletContainerInitializer 这个内部对象会被容器的扫描到用来配置容器的DispatcherServlet，这样容器就不需要通过扫描web.xml来
+ * 配置DispatcherServlet了 
+ * ps: DispatcherServlet是容器中处理请求的分发器，在原始的javaWeb中一般用一个web.xml来定义，将请求地址跟具体的servlet关联起来。
+ */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	/**
      *Specifies Java Config classes for non-Spring MVC, such as business logic.
